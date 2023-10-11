@@ -13,6 +13,9 @@
         android:theme="@style/Theme.ProjectJournal"
         tools:targetApi="31">
         <activity
+            android:name=".JournalEntryAdapter"
+            android:exported="false" />
+        <activity
             android:name=".CreateEntry"
             android:exported="false" />
         <activity
