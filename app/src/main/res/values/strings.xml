@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Project-Journal</string>
+    <string name="mi_diario">Mi Diario</string>
+    <string name="agregar">agregar</string>
+    <string name="buscar">buscar</string>
 </resources>
