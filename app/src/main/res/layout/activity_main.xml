@@ -44,7 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/recyclerView"
         app:layout_constraintBottom_toBottomOf="parent" >
 
-        <!-- Espacio entre los botones (puedes ajustarlo según tus preferencias) -->
+
         <ImageButton
             android:id="@+id/buttonAddEntry"
             android:layout_width="83dp"
