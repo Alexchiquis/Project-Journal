@@ -3,4 +3,9 @@
     <string name="mi_diario">Mi Diario</string>
     <string name="agregar">agregar</string>
     <string name="buscar">buscar</string>
+    <string name="escribe_tu_entrada_de_diario">Escribe tu entrada de diario...</string>
+    <string name="seleccionar_fecha">Seleccionar Fecha</string>
+    <string name="agregar_imagen">Agregar Imagen</string>
+    <string name="guardar">Guardar</string>
+    <string name="vista">Vista</string>
 </resources>
