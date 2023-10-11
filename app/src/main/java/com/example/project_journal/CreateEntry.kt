@@ -12,6 +12,8 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.Toast
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import java.io.File
 import java.io.FileOutputStream
 import java.text.SimpleDateFormat
@@ -90,6 +92,10 @@ class CreateEntry : AppCompatActivity() {
             val selectedImageUri: Uri? = data.data
             if (selectedImageUri != null) {
                 imagePath = copyImageToAppDirectory(selectedImageUri)
+                Glide.with(this)
+                    .load(selectedImageUri)
+                    .apply(RequestOptions().placeholder(R.drawable.fail_image))
+                    .into(imageView)
 
             }
         }
