@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val buttonAddEntry : ImageButton = findViewById(R.id.buttonAddEntry)
+        val buttonSearch : ImageButton = findViewById(R.id.buttonSearch)
         //Visualizar entradas
         recyclerView = findViewById(R.id.recyclerView)
         adapter = JournalEntryAdapter() // Crea el adaptador personalizado
@@ -29,7 +30,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, CreateEntry::class.java)
             startActivity(intent)
         }
-
+        buttonSearch.setOnClickListener{
+            val intent=Intent(this,SearchEntry::class.java)
+            startActivity(intent)
+        }
     }
     private fun loadEntriesFromDatabase() {
         val dbHelper = DbHelper(this)
