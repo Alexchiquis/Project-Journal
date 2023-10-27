@@ -20,7 +20,7 @@ class EntriesForDateActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         // Obtiene la fecha seleccionada de los extras del Intent
         val selectedDate = intent.getStringExtra("selectedDate")
-        textViewDate.text = "Ingresa la fecha: $selectedDate"
+        textViewDate.text = "Diario fecha: $selectedDate"
         // Carga las entradas relacionadas con la fecha seleccionada
         loadEntriesForDate(selectedDate)
     }

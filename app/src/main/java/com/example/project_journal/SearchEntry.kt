@@ -26,7 +26,7 @@ class SearchEntry : AppCompatActivity() {
     private fun startEntriesForDateActivity(selectedDate: String){
         // Puedes pasar la fecha como un extra en el Intent o como un argumento en el Fragment
         val intent = Intent(this, EntriesForDateActivity::class.java)
-        intent.putExtra("SelectedDate",selectedDate)
+        intent.putExtra("selectedDate",selectedDate)
         startActivity(intent)
     }
 
