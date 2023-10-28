@@ -90,6 +90,33 @@ class DbHelper( context: Context) : SQLiteOpenHelper(context, dbName, null, dbVe
         return entries
     }
 
+    // Función para buscar entradas por palabra clave
+    fun searchEntriesByKeyword(keyword: String?): List<JournalData> {
+        val entries = mutableListOf<JournalData>()
+        val db = this.readableDatabase
+        val query = "SELECT * FROM journal_entries WHERE content LIKE ?"
+        val selectionArgs = arrayOf("%$keyword%")
+        val cursor = db.rawQuery(query, selectionArgs)
+
+        cursor.use {
+            if (it.moveToFirst()) {
+                do {
+                    val id = it.getLong(it.getColumnIndexOrThrow(COLUMN_ID))
+                    val content = it.getString(it.getColumnIndexOrThrow(COLUMN_CONTENT))
+                    val date = it.getString(it.getColumnIndexOrThrow(COLUMN_DATE))
+                    val mood = it.getString(it.getColumnIndexOrThrow(COLUMN_MOOD))
+                    val imagePath = it.getString(it.getColumnIndexOrThrow(COLUMN_IMAGE_PATH))
+
+                    val entry = JournalData(id, content, date, mood, imagePath)
+                    entries.add(entry)
+                } while (it.moveToNext())
+            }
+        }
+
+        return entries
+    }
+
+
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
         TODO("Not yet implemented")
     }
