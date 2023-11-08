@@ -1,6 +1,7 @@
 package com.example.project_journal
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -21,7 +22,7 @@ class SearchEntry : AppCompatActivity() {
 
         buttonSearch = findViewById(R.id.buttonSearch)
         calendarView = findViewById(R.id.calendarView)
-
+        calendarView.setBackgroundColor(Color.parseColor("#FFFFFF"));
         calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
             // Cargar las entradas relacionadas con la fecha seleccionada
             val selectedDate = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(

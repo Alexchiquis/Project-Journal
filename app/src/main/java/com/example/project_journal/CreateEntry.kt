@@ -23,7 +23,6 @@ import java.util.Locale
 class CreateEntry : AppCompatActivity() {
 
     private lateinit var editTextContent: EditText
-    private lateinit var datePickerButton: Button
     private lateinit var imageView: ImageView
     private lateinit var addImageButton: Button
     private lateinit var emojiSpinner: Spinner
@@ -37,7 +36,6 @@ class CreateEntry : AppCompatActivity() {
 
         // Inicializamos lo del XML
         editTextContent = findViewById(R.id.editTextContent)
-        datePickerButton = findViewById(R.id.datePickerButton)
         imageView = findViewById(R.id.imageView)
         addImageButton = findViewById(R.id.addImageButton)
         emojiSpinner = findViewById(R.id.emojiSpinner)
